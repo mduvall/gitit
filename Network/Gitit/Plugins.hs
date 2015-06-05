@@ -53,8 +53,8 @@ loadPlugin pluginName = do
             if "Network.Gitit.Plugin" `isPrefixOf` pluginName
                then pluginName
                else if "Network/Gitit/Plugin/" `isInfixOf` pluginName
-                       then "Network.Gitit.Plugin." ++ takeBaseName pluginName
-                       else takeBaseName pluginName
+                       then "Network.Gitit.Plugin." ++ pluginName
+                       else pluginName
 #if MIN_VERSION_ghc(7,4,0)
       pr <- parseImportDecl "import Prelude"
       i <- parseImportDecl "import Network.Gitit.Interface"
